@@ -1,9 +1,9 @@
-package util.view;
+package br.com.hellojfx.util;
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
-public class Alerts {
+public class AlertsView {
 
     public static void showAlert(
             String title,

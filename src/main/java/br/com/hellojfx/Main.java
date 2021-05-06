@@ -1,12 +1,13 @@
+package br.com.hellojfx;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.StackPane;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+
+import static br.com.hellojfx.util.UtilArquivo.getResource;
 
 public class Main extends Application {
 
@@ -19,10 +20,10 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         try{
-            FXMLLoader loader = new FXMLLoader(this.getClass().getResource("view/HelloJFxView.fxml"));
-            Parent parent = loader.load();
+            final FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getResource("/fxml/HelloJFxView.fxml"));
             stage.setTitle("Hello World");
-            stage.setScene(new Scene(parent));
+            stage.setScene(new Scene(loader.load()));
             stage.show();
         }catch (IOException e){
             e.printStackTrace();
